@@ -29,4 +29,5 @@ def generate_launch_description():
             package='system_modes',
             executable='mode_manager',
             parameters=[{'modelfile': launch.substitutions.LaunchConfiguration('modelfile')}],
+            # arguments=['--ros-args', '--log-level', 'debug'],
             output='screen')])

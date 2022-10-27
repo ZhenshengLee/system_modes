@@ -10,17 +10,18 @@ actuation:
       right/manipulator
     modes:
       __DEFAULT__:
-        drive_base: active
+        drive_base: active.__DEFAULT__
         left/manipulator: inactive
-        right/manipulator: active.WEAK
-      MODERATE:
-        drive_base: active.SLOW
-        left/manipulator: active.WEAK
-        right/manipulator: active.WEAK
-      PERFORMANCE:
-        drive_base: active.FAST
-        left/manipulator: active.STRONG
-        right/manipulsator: active.STRONG
+        right/manipulator: inactive
+      LEFT:
+        # drive_base: active.__DEFAULT__
+        left/manipulator: active
+        # right/manipulsator: inactive
+      RIGHT:
+        # drive_base: active.__DEFAULT__
+        # left/manipulator: inactive
+        right/manipulator: active
+
 
 left/manipulator:
   ros__parameters:
@@ -29,12 +30,6 @@ left/manipulator:
       __DEFAULT__:
         ros__parameters:
           max_torque: 0.1
-      WEAK:
-        ros__parameters:
-          max_torque: 0.1
-      STRONG:
-        ros__parameters:
-          max_torque: 0.2
 
 drive_base:
   ros__parameters:
@@ -44,14 +39,6 @@ drive_base:
         ros__parameters:
           max_speed: 0.1
           controller: PID
-      SLOW:
-        ros__parameters:
-          max_speed: 0.2
-          controller: PID
-      FAST:
-        ros__parameters:
-          max_speed: 0.9
-          controller: MPC
 
 right/manipulator:
   ros__parameters:
@@ -60,9 +47,3 @@ right/manipulator:
       __DEFAULT__:
         ros__parameters:
           max_torque: 0.11
-      WEAK:
-        ros__parameters:
-          max_torque: 0.05
-      STRONG:
-        ros__parameters:
-          max_torque: 0.3

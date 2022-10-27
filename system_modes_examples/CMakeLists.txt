@@ -50,6 +50,9 @@ install(DIRECTORY launch DESTINATION share/${PROJECT_NAME}/)
 install(FILES example_modes.yaml
   DESTINATION share/${PROJECT_NAME}/
 )
+install(FILES example_modes_with_namespace.yaml
+  DESTINATION share/${PROJECT_NAME}/
+)
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME}/)
 
 if(BUILD_TESTING)

@@ -23,7 +23,7 @@ import launch_ros
 def generate_launch_description():
     default_modelfile = (
         ament_index_python.packages.get_package_share_directory('system_modes_examples') +
-        '/example_modes.yaml')
+        '/example_modes_with_namespace.yaml')
     return launch.LaunchDescription([
         launch_ros.actions.LifecycleNode(
             package='system_modes_examples',
